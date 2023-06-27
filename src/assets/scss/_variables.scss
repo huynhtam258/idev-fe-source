@@ -1,13 +1,41 @@
-$body-color: #ffffff;
-$primary-color: #2e7eed;
-$secondary-color: #fff;
-$border-color:#cccccc;
-$primary-font: 'Open Sans', sans-serif;
-$secondary-font: 'Lora', serif;
-$text-color: #808080;
-$title-color: #757575;
-$gray: #808080;
-$light-gray: #fafafa;
-$dark: #000;
-$light: #fff;
-$black: #000;
+:root {
+    --body-color: #ffffff;
+    --primary-color: #2e7eed;
+    --secondary-color: #fff;
+    --border-color:#cccccc;
+    --primary-font: 'Open Sans', sans-serif;
+    --secondary-font: 'Lora', serif;
+    --text-color: #808080;
+    --title-color: #757575;
+    --gray: #808080;
+    --light-gray: #fafafa;
+    --dark: #000;
+    --light: #fff;
+    --black: #000;
+    --black1:#1a1b1f;
+
+    --font-size-small: 10px;
+    --font-size-regular: 11px;
+    --font-size-xregular: 12px;
+    --font-size-medium: 13px;
+    --font-size-xmedium: 14px;
+    --font-size-xmmedium: 16px;
+    --font-size-xsmedium: 17px;
+    --font-size-xxmedium: 18px;
+    --font-size-large: 20px;
+    --font-size-xlarge: 22px;
+    --font-size-xslarge: 26px;
+    --font-size-xxxlarge: 56px;
+    --font-size-extralarge: 64px;
+    --font-size-xxlarge: 36px;
+
+
+    --font-weight-small: 300;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    --max-width-desktop: 1280px;
+    --outside-spacing: 100px;
+}
