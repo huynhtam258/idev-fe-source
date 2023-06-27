@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   srcDir: 'src/',
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   components: [
     {
       path: '~/components',
@@ -14,6 +14,11 @@ export default defineNuxtConfig({
   css: [
     'assets/scss/style.scss'
   ],
+  runtimeConfig: {
+    public: {
+      url: `${process.env.NUXT_PUBLIC_API_BASE}` || ''
+    }
+  },
   app: {
     head: {
       link: [
