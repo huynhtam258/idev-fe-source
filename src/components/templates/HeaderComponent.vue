@@ -36,6 +36,7 @@
       display: flex;
       li {
         padding: 10px 20px;
+        font-size: var(--font-size-medium);
       }
     }
   }

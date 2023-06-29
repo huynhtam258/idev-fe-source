@@ -124,11 +124,6 @@
 </script>
 <style scoped lang='scss'>
 .row {
-  display: flex;
-  // -ms-flex-wrap: wrap;
-  // flex-wrap: wrap;
-  // margin-right: -15px;
-  // margin-left: -15px;
   justify-content: space-between;
   align-items: center;
 }
@@ -137,7 +132,7 @@
     &--text {
       width: 600px;
       .title, .text {
-        color: #fff;
+        color: var(--light);
       }
     }
   }
@@ -155,11 +150,7 @@
     width: 200%;
     height: 200%;
     border-radius: 50%;
-    background-image: linear-gradient(
-      45deg,
-      #009ec5 0%,
-      var(--primary-color) 20%,
-      #02225b 50%
+    background-image: linear-gradient(45deg,#009ec5 0%, var(--primary-color) 20%, #02225b 50%
     );
     z-index: -1;
   }
