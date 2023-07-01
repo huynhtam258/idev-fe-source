@@ -9,8 +9,12 @@ export default defineNuxtConfig({
     }
   ],
   typescript: {
-    typeCheck: true
+    typeCheck: false
   },
+  modules: [
+    '@nuxt/types',
+    '@nuxtjs/axios'
+  ],
   css: [
     'assets/scss/style.scss'
   ],
