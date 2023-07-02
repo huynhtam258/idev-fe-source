@@ -2,7 +2,7 @@
   <div class="headerComponent container">
     <div class="headerComponent_logo">
       <img class="icon" src="~/assets/icon/logo.png" alt="" srcset="" />
-      <h4 class="slogan">iDev - luôn là sự tin tưởng của bạn</h4>
+      <h4 class="slogan">iDev - thiết kế website chuyên nghiệp</h4>
     </div>
     <div class="headerComponent_nav">
       <ul class="headerComponent_nav_list">

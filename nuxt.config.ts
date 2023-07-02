@@ -11,10 +11,6 @@ export default defineNuxtConfig({
   typescript: {
     typeCheck: false
   },
-  modules: [
-    '@nuxt/types',
-    '@nuxtjs/axios'
-  ],
   css: [
     'assets/scss/style.scss'
   ],

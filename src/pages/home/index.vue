@@ -1,19 +1,35 @@
 <template>
   <div class="homePage">
     <GradientBannerComponent></GradientBannerComponent>
-    <FeatureCardComponent></FeatureCardComponent>
+    <section class="featureCard section pt-0 position-relative pull-top">
+      <div class="container">
+        <div class="rounded shadow p-5 bg-white featureCard_content">
+          <div class="row featureCard_content__row">
+            <div
+              v-for="(feature, index) in homeData.data.feature"
+              :key="index"
+              class="featureCard_content__item col-lg-4 col-md-6 mt-5 mt-md-0 text-center"
+            >
+              <h3 class="featureCard_content__item--title">
+                {{ feature.title }}
+              </h3>
+              <p class="regular text-muted">
+                {{ feature.detail }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <div class="homePage_feature">
       <div class="content-image">
         <img class="image" src="~/assets/images/feature-new-01.jpg" alt="" />
       </div>
       <div class="content-text">
         <div class="homePage_feature__content">
-          <h1>Tương thích với đa thiết bị</h1>
+          <h1>{{ homeData.data.content_1.title }}</h1>
           <div class="content">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
+            {{ homeData.data.content_1.detail }}
           </div>
         </div>
       </div>
@@ -21,12 +37,9 @@
     <div class="homePage_feature">
       <div class="content-text">
         <div class="homePage_feature__content">
-          <h1>Tương thích với đa thiết bị</h1>
+          <h1>{{ homeData.data.content_2.title }}</h1>
           <div class="content">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
+            {{ homeData.data.content_2.detail }}
           </div>
         </div>
       </div>
@@ -36,22 +49,18 @@
     </div>
     <div class="homePage_contact">
       <div class="intro">
-        <h1>Sứ mệnh của idev</h1>
+        <h1>{{ homeData.data.content_3.title }}</h1>
         <div class="content">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
+          {{ homeData.data.content_3.detail }}
         </div>
       </div>
     </div>
   </div>
 </template>
 <script setup lang="ts">
+const { data: homeData } = await useAsyncData(() =>
+  $fetch("http://localhost:3066/api/home")
+);
 </script>
 <style scoped lang='scss'>
 .homePage {
@@ -97,5 +106,29 @@
       color: var(--light);
     }
   }
+}
+
+.featureCard {
+  position: relative;
+  bottom: 100px;
+  &_content {
+    background-color: var(--light);
+    border-radius: 7px;
+
+    &__row {
+      justify-content: space-around;
+    }
+    &__item {
+      width: calc(100% / 4);
+      text-align: center;
+      &--title {
+        font-size: 30px;
+        font-weight: 300;
+      }
+    }
+  }
+}
+.shadow {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
 }
 </style>

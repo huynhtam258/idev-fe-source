@@ -1,7 +1,7 @@
 import { AxiosInstance, AxiosResponse } from 'axios';
 import { AxiosInterceptor } from './../../interceptor/axios.interceptor';
 
-export class HttpService {
+export default class HttpService {
   private axiosInstance: AxiosInstance;
 
   constructor() {
