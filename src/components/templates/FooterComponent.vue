@@ -1,10 +1,10 @@
 <template>
   <footer>
     <div class="footer-main">
-      <div class="container">
+      <div class="container footer-main-container">
         <div class="row">
           <div class="col-lg-2 col-md-3 col-6 mt-5 mt-lg-0">
-            <div class="block-2">
+            <div class="block-content">
               <!-- heading -->
               <h6>Product</h6>
               <!-- links -->
@@ -16,7 +16,7 @@
             </div>
           </div>
           <div class="col-lg-2 col-md-3 col-6 mt-5 mt-lg-0">
-            <div class="block-2">
+            <div class="block-content">
               <!-- heading -->
               <h6>Resources</h6>
               <!-- links -->
@@ -28,7 +28,7 @@
             </div>
           </div>
           <div class="col-lg-2 col-md-3 col-6 mt-5 mt-lg-0">
-            <div class="block-2">
+            <div class="block-content">
               <!-- heading -->
               <h6>Company</h6>
               <!-- links -->
@@ -41,7 +41,7 @@
             </div>
           </div>
           <div class="col-lg-2 col-md-3 col-6 mt-5 mt-lg-0">
-            <div class="block-2">
+            <div class="block-content">
               <!-- heading -->
               <h6>Company</h6>
               <!-- links -->
@@ -65,47 +65,35 @@
 <style lang="scss" scoped>
 .footer-main {
   padding: 92px 0;
-  background: #1a1b1f;
-  .container {
+  background-color: var(--black1);
+  &-container {
     .row {
       justify-content: space-around;
     }
   }
-}
-.footer-main .block-2 h6 {
-  font-weight: bold;
-  font-size: 14px;
-  text-transform: uppercase;
-  color: #fff;
-  margin-bottom: 25px;
-}
-
-.footer-main .block-2 ul {
-  padding: 0;
-}
-
-.footer-main .block-2 ul li {
-  margin-bottom: 10px;
-  list-style: none;
-}
-
-.footer-main .block-2 ul li a {
-  font-size: 14px;
-  color: #6f6f71;
-  transition: 0.2s ease;
-}
-
-.footer-main .block-2 ul li a:hover {
-  color: #fff;
-}
-
-.footer-classic {
-  background: #fafafa;
-  text-align: center;
-  padding: 110px 0;
-}
-
-.footer-classic ul.social-icons {
-  margin-bottom: 30px;
+  .block-content {
+    h6 {
+      font-weight: bold;
+      font-size: 14px;
+      text-transform: uppercase;
+      color: var(--light);
+      margin-bottom: 25px;
+    }
+    ul {
+      padding: 0;
+      li {
+        margin-bottom: 10px;
+        list-style: none;
+        a {
+          font-size: 14px;
+          color: var(--gray-1);
+          transition: 0.2s ease;
+          &:hover {
+            color: var(--light);
+          }
+        }
+      }
+    }
+  }
 }
 </style>
