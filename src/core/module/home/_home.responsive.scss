@@ -1,0 +1,19 @@
+@media (max-width: 1100px) {
+  .homePage {
+    &_feature {
+      .content-image,
+      .content-text {
+        width: auto !important;
+      }
+    }
+
+  }
+  .featureCard {
+    &_content {
+      &__item {
+        width: 76% !important;
+        text-align: center;
+      }
+    }
+  }
+}

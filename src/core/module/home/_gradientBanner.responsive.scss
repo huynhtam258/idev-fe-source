@@ -1,0 +1,13 @@
+@media (max-width: 1100px) {
+  .gradientBanner {
+    &_content {
+      &--text {
+        width: auto !important;
+      }
+    }
+  }
+
+  .img-fluid {
+    width: 100%;
+  }
+}

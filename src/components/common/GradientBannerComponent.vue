@@ -123,6 +123,7 @@
 <script>
 </script>
 <style scoped lang='scss'>
+@import 'src/core/module/home/_gradientBanner.responsive.scss';
 .row {
   justify-content: space-between;
   align-items: center;

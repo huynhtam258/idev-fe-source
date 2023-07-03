@@ -19,6 +19,7 @@
 </script>
 
 <style lang="scss" scoped>
+@import 'src/core/module/header/_header.responsive.scss';
 .headerComponent {
   display: flex;
   justify-content: space-between;

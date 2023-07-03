@@ -38,5 +38,13 @@
     --font-weight-bold: 700;
 
     --max-width-desktop: 1280px;
+    
+    @media (max-width: 1280px) {
+        --max-width-desktop: 1100px;
+    }
+
+    @media (max-width: 1100px) {
+        --max-width-desktop: 80%;
+    }
     --outside-spacing: 100px;
 }

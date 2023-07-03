@@ -65,6 +65,7 @@ const { data: homeData } = await useAsyncData(() =>
 );
 </script>
 <style scoped lang='scss'>
+@import 'src/core/module/home/_home.responsive.scss';
 .homePage {
   &_feature {
     display: flex;
@@ -76,7 +77,7 @@ const { data: homeData } = await useAsyncData(() =>
     }
     .content-image {
       .image {
-        width: 540px;
+        width: 100%;
       }
     }
     .content-text {
