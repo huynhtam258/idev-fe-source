@@ -21,7 +21,7 @@
         </div>
       </div>
     </section>
-    <div class="homePage_feature">
+    <div class="homePage_feature row">
       <div class="content-image">
         <img class="image" src="~/assets/images/feature-new-01.jpg" alt="" />
       </div>
@@ -34,7 +34,7 @@
         </div>
       </div>
     </div>
-    <div class="homePage_feature">
+    <div class="homePage_feature row">
       <div class="content-text">
         <div class="homePage_feature__content">
           <h1>{{ homeData.data.content_2.title }}</h1>
@@ -58,8 +58,10 @@
   </div>
 </template>
 <script setup lang="ts">
+const appConfig = useRuntimeConfig()
+
 const { data: homeData } = await useAsyncData(() =>
-  $fetch("http://localhost:3066/api/home")
+  $fetch(`${appConfig.public.url}/api/home`)
 );
 </script>
 <style scoped lang='scss'>
