@@ -1,5 +1,5 @@
 <template>
-  <NuxtLayout name="custom">
+  <NuxtLayout name="default">
     <div>
       Some default layout shared across all pages
       <slot />
