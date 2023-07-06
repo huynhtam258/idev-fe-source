@@ -6,19 +6,32 @@
           Đăng nhập tài khoản
         </h4>
       </div>
-      <input class="form-control textfield" type="text" placeholder="Tên tài khoản" required>
-      <input class="form-control textfield" type="text" placeholder="Mật khẩu" required>
-      <button class="btn-main-sm">Đăng nhập</button>
+      <input class="form-control textfield" v-model="email" type="text" placeholder="Tên tài khoản" required>
+      <input class="form-control textfield" v-model="password" type="password" placeholder="Mật khẩu" required>
     </form>
+    <button class="btn-main-sm" @click="onLogin">Đăng nhập</button>
   </div>
 </template>
-<script lang="ts" scoped>
+<script lang="ts" setup>
+
+import LoginService from './../../../core/module/login/login.service'
+const email = ref<string>('')
+const password = ref<string>('')
+const loginService = new LoginService()
+
+async function onLogin(): Promise<void> {
+  const userLogin = { email: email.value, password: password.value }
+  await loginService.login(userLogin)
+  
+  // e.preventDefault()
+}
 </script>
 <style lang="scss" scoped>
 .login {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   height: 100vh;
   &_form {
     width: 473px;
@@ -58,6 +71,7 @@
     .textfield {
       margin-bottom: 20px;
     }
+  }
     .btn-main-sm {
       padding: 15px 35px;
       border-radius: 3px;
@@ -67,6 +81,5 @@
       font-size: 14px;
       border: unset;
     }
-  }
 }
 </style>
