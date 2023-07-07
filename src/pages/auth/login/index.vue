@@ -2,26 +2,38 @@
   <div class="login">
     <form class="login_form">
       <div class="login_form_title">
-        <h4>
-          Đăng nhập tài khoản
-        </h4>
+        <h4>Đăng nhập tài khoản</h4>
       </div>
-      <button-component v-model:modelValue="email" class="textfield" type='text' placeholder='email' />
-      <button-component v-model:modelValue="password" class="textfield" type='password' placeholder='mật khẩu' />
+      <button-component
+        v-model:modelValue="email"
+        class="textfield"
+        type="text"
+        placeholder="email"
+      />
+      <button-component
+        v-model:modelValue="password"
+        class="textfield"
+        type="password"
+        placeholder="mật khẩu"
+      />
     </form>
     <button class="btn-main-sm" @click="onLogin">Đăng nhập</button>
   </div>
 </template>
 <script lang="ts" setup>
-import LoginService from './../../../core/module/login/login.service'
+definePageMeta({
+  layout: 'auth',
+  middleware: 'auth'
+})
+import LoginService from "./../../../core/module/login/login.service";
 
-const email = ref<string>('');
-const password = ref<string>('');
+const email = ref<string>("");
+const password = ref<string>("");
 const loginService = new LoginService();
 
 async function onLogin(): Promise<void> {
-  const userLogin = { email: email.value, password: password.value }
-  await loginService.login(userLogin)
+  const userLogin = { email: email.value, password: password.value };
+  await loginService.login(userLogin);
 }
 </script>
 <style lang="scss" scoped>
@@ -44,19 +56,19 @@ async function onLogin(): Promise<void> {
         font-size: 30px;
       }
     }
-    
+
     .textfield {
       margin-bottom: 20px;
     }
   }
-    .btn-main-sm {
-      padding: 15px 35px;
-      border-radius: 3px;
-      background: var(--primary-color);
-      color: var(--white);
-      outline: none;
-      font-size: 14px;
-      border: unset;
-    }
+  .btn-main-sm {
+    padding: 15px 35px;
+    border-radius: 3px;
+    background: var(--primary-color);
+    color: var(--white);
+    outline: none;
+    font-size: 14px;
+    border: unset;
+  }
 }
 </style>

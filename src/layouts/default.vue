@@ -1,8 +1,7 @@
 <template>
-  <NuxtLayout name="default">
-    <div>
-      Some default layout shared across all pages
+  <div class="default-layout">
+    <HeaderComponent  />
       <slot />
-    </div>
-  </NuxtLayout>
+    <FooterComponent />
+  </div>
 </template>
