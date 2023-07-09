@@ -2,7 +2,7 @@
   <div class="login">
     <form class="login_form">
       <div class="login_form_title">
-        <h4>Đăng nhập tài khoản</h4>
+        <h4>Đăng kí tài khoản</h4>
       </div>
       <textfield-component
         v-model:modelValue="email"
@@ -17,7 +17,7 @@
         placeholder="mật khẩu"
       />
     </form>
-    <button class="btn-main-sm" @click="onLogin">Đăng nhập</button>
+    <button class="btn-main-sm" @click="onLogin">Đăng kí</button>
   </div>
 </template>
 <script lang="ts" setup>

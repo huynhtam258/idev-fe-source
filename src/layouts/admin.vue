@@ -1,5 +1,5 @@
 <template>
-  <div class="auth-layout">
+  <div class="admin-layout">
     <slot />
   </div>
 </template>
@@ -7,4 +7,7 @@
 </script>
 
 <style lang="scss" scoped>
+.auth-layout {
+  display: flex;
+}
 </style>

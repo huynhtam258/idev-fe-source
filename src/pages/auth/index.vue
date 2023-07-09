@@ -1,10 +1,13 @@
 <template>
-  <div class="auth-layout">
-    <slot />
-  </div>
+    
 </template>
 <script lang="ts" setup>
-</script>
 
+definePageMeta({
+  layout: 'auth',
+  middleware: "auth"
+})
+</script>
 <style lang="scss" scoped>
+
 </style>

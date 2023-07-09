@@ -1,7 +1,7 @@
 export default defineNuxtRouteMiddleware((from, to) => {
-  if(to.name === 'auth') {
+  if(to.name === 'admin') {
     return navigateTo({
-      path: '/auth/login'
+      path: '/admin/dashboard'
     })
   }
 })
