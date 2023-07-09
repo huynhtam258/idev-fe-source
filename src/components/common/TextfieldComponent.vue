@@ -1,16 +1,17 @@
 <template>
   <div class="textfieldComponent">
     <input
-      :value="modelValue"
-      class="form-control"
+      :value="internalValue"
       :type="type"
       :placeholder="placeholder"
       :required="required"
+      class="form-control"
+      @input="updateModelValue($event.target.value)"
     />
   </div>
 </template>
 <script lang="ts" setup>
-defineProps({
+const props = defineProps({
   modelValue: {
     type: String || Number,
     default: "",
@@ -28,7 +29,20 @@ defineProps({
     default: false,
   },
 });
+const emit = defineEmits(["update:modelValue"]);
+const internalValue = ref<string | number>(props.modelValue);
+
+function updateModelValue(value: string | number) {
+  internalValue.value = value;
+  emit("update:modelValue", value);
+}
+
+watch(internalValue, (): void => {
+  internalValue.value = props.modelValue;
+});
+
 </script>
+
 <style lang="scss" scoped>
 .textfieldComponent {
   border: 1px solid var(--white-1);
@@ -50,7 +64,7 @@ defineProps({
       outline: unset;
     }
   }
-  
+
   input:focus {
     background-color: unset;
   }

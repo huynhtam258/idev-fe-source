@@ -5,13 +5,13 @@
         <h4>Đăng kí tài khoản</h4>
       </div>
       <textfield-component
-        v-model:modelValue="email"
+        v-model="email"
         class="textfield"
         type="text"
         placeholder="email"
       />
       <textfield-component
-        v-model:modelValue="password"
+        v-model="password"
         class="textfield"
         type="password"
         placeholder="mật khẩu"
