@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  srcDir: 'src/',
+  srcDir: 'src',
   devtools: { enabled: false },
   components: [
     {
@@ -8,9 +8,6 @@ export default defineNuxtConfig({
       pathPrefix: false
     }
   ],
-  typescript: {
-    typeCheck: false
-  },
   css: [
     'assets/scss/style.scss'
   ],

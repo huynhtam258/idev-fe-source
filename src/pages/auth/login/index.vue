@@ -1,3 +1,18 @@
+<script lang="ts" setup>
+definePageMeta({
+  layout: 'auth',
+})
+import LoginService from "./../../../core/module/login/login.service";
+
+const email = ref<string>("");
+const password = ref<string>("");
+const loginService = new LoginService();
+
+async function onLogin(): Promise<void> {
+  const userLogin = { email: email.value, password: password.value };
+  await loginService.login(userLogin);
+}
+</script>
 <template>
   <div class="login">
     <form class="login_form">
@@ -20,24 +35,8 @@
     <button class="btn-main-sm" @click="onLogin">Đăng nhập</button>
   </div>
 </template>
-<script lang="ts" setup>
-definePageMeta({
-  layout: 'auth',
-})
-import LoginService from "./../../../core/module/login/login.service";
 
-const email = ref<string>("");
-const password = ref<string>("");
-const loginService = new LoginService();
-
-async function onLogin(): Promise<void> {
-  console.log(email.value);
-  
-  const userLogin = { email: email.value, password: password.value };
-  await loginService.login(userLogin);
-}
-</script>
-<style lang="scss" scoped>
+<style scoped lang="scss">
 .login {
   display: flex;
   justify-content: center;

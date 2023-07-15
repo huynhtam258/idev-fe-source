@@ -6,16 +6,38 @@
     </div>
     <div class="headerComponent_nav">
       <ul class="headerComponent_nav_list">
-        <li>HOME</li>
-        <li>PAGE</li>
-        <li>ABOUT</li>
-        <li>CONTRACT</li>
+        <li 
+          v-for="(nav, index) in navs" 
+          :key="`${nav.label}-${index}`"
+          :class="{'active': nav.name === route.name}"
+        >
+          {{ nav.label }}
+        </li>
       </ul>
     </div>
   </div>
 </template>
 
 <script setup lang='ts'>
+const route = useRoute()
+const navs = ref([
+  {
+    label: "Trang chủ",
+    name: "home"
+  },
+  {
+    label: "Bảng giá",
+    name: "prices"
+  },
+  {
+    label: "Về chúng tôi",
+    name: "about-us"
+  },
+  {
+    label: "Liên hệ",
+    name: "connect"
+  }
+])
 </script>
 
 <style lang="scss" scoped>
@@ -38,6 +60,10 @@
       li {
         padding: 10px 20px;
         font-size: var(--font-size-medium);
+        font-weight: bold;
+        &.active {
+          border-bottom: 4px solid;
+        }
       }
     }
   }

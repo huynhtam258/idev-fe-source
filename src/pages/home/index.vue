@@ -1,3 +1,21 @@
+
+<script setup lang="ts">
+useHead({
+  title: "Home",
+  meta: [
+    {
+      name: "description",
+      content: "Home"
+    }
+  ],
+  titleTemplate: "Trang chủ iDev website chuyên thiết kế website"
+})
+const appConfig = useRuntimeConfig()
+
+const { data: homeData } = await useAsyncData(() =>
+  $fetch(`${appConfig.public.url}/api/home`)
+);
+</script>
 <template>
   <div class="homePage">
     <GradientBannerComponent></GradientBannerComponent>
@@ -57,13 +75,7 @@
     </div>
   </div>
 </template>
-<script setup lang="ts">
-const appConfig = useRuntimeConfig()
 
-const { data: homeData } = await useAsyncData(() =>
-  $fetch(`${appConfig.public.url}/api/home`)
-);
-</script>
 <style scoped lang='scss'>
 @import 'src/core/module/home/_home.responsive.scss';
 .homePage {
