@@ -1,14 +1,16 @@
-
 <script setup lang="ts">
 useHead({
   title: "Home",
   meta: [
     {
-      name: "description",
+      name: "iDev chuyên thiết kế website giá cả tốt nhất với thị trường",
       content: "Home"
     }
   ],
   titleTemplate: "Trang chủ iDev website chuyên thiết kế website"
+})
+definePageMeta({
+  layout: false
 })
 const appConfig = useRuntimeConfig()
 
@@ -17,6 +19,7 @@ const { data: homeData } = await useAsyncData(() =>
 );
 </script>
 <template>
+<NuxtLayout name="default">
   <div class="homePage">
     <GradientBannerComponent></GradientBannerComponent>
     <section class="featureCard section pt-0 position-relative pull-top">
@@ -74,10 +77,11 @@ const { data: homeData } = await useAsyncData(() =>
       </div>
     </div>
   </div>
+</NuxtLayout>
 </template>
 
 <style scoped lang='scss'>
-@import 'src/core/module/home/_home.responsive.scss';
+// @import 'src/core/module/home/_home.responsive.scss';
 .homePage {
   &_feature {
     display: flex;

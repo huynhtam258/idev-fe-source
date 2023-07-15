@@ -2,18 +2,34 @@
 export default defineNuxtConfig({
   srcDir: 'src',
   devtools: { enabled: false },
+  ssr: true,
   components: [
     {
       path: '~/components',
       pathPrefix: false
-    }
+    },
   ],
+  nitro: {
+    serveStatic: false,
+  },
   css: [
     'assets/scss/style.scss'
   ],
   runtimeConfig: {
     public: {
       url: `${process.env.NUXT_PUBLIC_API_BASE}` || ''
+    }
+  },
+  routeRules: {
+    '/home': { ssr: true },
+  },
+  vite: {
+    build: {
+      rollupOptions: {
+        output: {
+          chunkFileNames: '_nuxt/[hash].mjs'
+        }
+      }
     }
   },
   app: {

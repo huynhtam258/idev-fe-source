@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 definePageMeta({
-  layout: 'auth',
-})
+  layout: false,
+});
 import LoginService from "./../../../core/module/login/login.service";
 
 const email = ref<string>("");
@@ -14,26 +14,28 @@ async function onLogin(): Promise<void> {
 }
 </script>
 <template>
-  <div class="login">
-    <form class="login_form">
-      <div class="login_form_title">
-        <h4>Đăng nhập tài khoản</h4>
-      </div>
-      <textfield-component
-        v-model="email"
-        class="textfield"
-        type="text"
-        placeholder="email"
-      />
-      <textfield-component
-        v-model="password"
-        class="textfield"
-        type="password"
-        placeholder="mật khẩu"
-      />
-    </form>
-    <button class="btn-main-sm" @click="onLogin">Đăng nhập</button>
-  </div>
+  <NuxtLayout name="auth">
+    <div class="login">
+      <form class="login_form">
+        <div class="login_form_title">
+          <h4>Đăng nhập tài khoản</h4>
+        </div>
+        <textfield-component
+          v-model="email"
+          class="textfield"
+          type="text"
+          placeholder="email"
+        />
+        <textfield-component
+          v-model="password"
+          class="textfield"
+          type="password"
+          placeholder="mật khẩu"
+        />
+      </form>
+      <button class="btn-main-sm" @click="onLogin">Đăng nhập</button>
+    </div>
+  </NuxtLayout>
 </template>
 
 <style scoped lang="scss">

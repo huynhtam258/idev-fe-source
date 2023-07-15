@@ -6,6 +6,7 @@
     "build:prod": "nuxi build --dotenv .env.production",
     "dev": "npx nuxi dev --dotenv .env.development",
     "prod": "npx nuxi dev --dotenv .env.production",
+    "clear": "npx nuxi clean",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
