@@ -10,6 +10,7 @@
           v-for="(nav, index) in navs" 
           :key="`${nav.label}-${index}`"
           :class="{'active': nav.name === route.name}"
+          @click="onNavigate(nav.name)"
         >
           {{ nav.label }}
         </li>
@@ -20,6 +21,7 @@
 
 <script setup lang='ts'>
 const route = useRoute()
+const router = useRouter()
 const navs = ref([
   {
     label: "Trang chủ",
@@ -38,6 +40,12 @@ const navs = ref([
     name: "connect"
   }
 ])
+
+function onNavigate(name: string): void {
+  router.push({
+    name
+  })
+}
 </script>
 
 <style lang="scss" scoped>
@@ -61,6 +69,7 @@ const navs = ref([
         padding: 10px 20px;
         font-size: var(--font-size-medium);
         font-weight: bold;
+        cursor: pointer;
         &.active {
           border-bottom: 4px solid;
         }
