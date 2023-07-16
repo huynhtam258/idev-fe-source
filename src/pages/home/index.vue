@@ -81,7 +81,7 @@ const { data: homeData } = await useAsyncData(() =>
 </template>
 
 <style scoped lang='scss'>
-// @import 'src/core/module/home/_home.responsive.scss';
+@import 'src/core/module/home/_home.responsive.scss';
 .homePage {
   &_feature {
     display: flex;
