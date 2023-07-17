@@ -99,17 +99,16 @@
       ></div>
     </div>
     <div class="container">
-      <div class="gradientBanner_content row align-items-center">
+      <div class="gradientBanner_content">
         <div class="gradientBanner_content--text col-md-6 order-2 order-md-1 text-center text-md-left">
           <h1 class="title">
-            iDev - luôn là sự tin tưởng của bạn
+            {{ title }}
           </h1>
           <p class="text">
-           iDev - luôn là sự tin tưởng của bạn iDev - luôn là sự tin tưởng của bạn iDev - luôn là sự tin tưởng của bạn iDev - luôn là sự tin tưởng của bạn iDev - luôn là sự tin tưởng của bạn iDev - luôn là sự tin tưởng của bạn 
+           {{ description }}
           </p>
-          <!-- <a class="btn btn-main-md">Download Now</a> -->
         </div>
-        <div class="col-md-6 text-center order-1 order-md-2">
+        <div v-if="image" class="col-md-6 text-center order-1 order-md-2">
           <img
             class="img-fluid"
             src="~/assets/images/mobile.png"
@@ -120,7 +119,22 @@
     </div>
   </section>
 </template>
-<script>
+<script setup lang="ts">
+
+const props = defineProps({
+  title: {
+    type: String,
+    default: "iDev - luôn là sự tin tưởng của bạn",
+  },
+  description: {
+    type: String,
+    default: "",
+  },
+  image: {
+    type: String,
+    default: ''
+  }
+});
 </script>
 <style scoped lang='scss'>
 @import 'src/core/module/home/_gradientBanner.responsive.scss';
@@ -130,8 +144,13 @@
 }
 .gradientBanner {
   &_content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    flex-wrap: wrap;
     &--text {
-      width: 600px;
+      width: 670px;
       .title, .text {
         color: var(--light);
       }
