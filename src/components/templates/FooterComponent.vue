@@ -1,60 +1,25 @@
 <template>
-  <footer>
+  <footer class="footer">
     <div class="footer-main">
-      <div class="container footer-main-container">
-        <div class="row">
-          <div class="col-lg-2 col-md-3 col-6 mt-5 mt-lg-0">
-            <div class="block-content">
-              <!-- heading -->
-              <h6>Product</h6>
-              <!-- links -->
-              <ul>
-                <li><a href="team.html">Teams</a></li>
-                <li><a href="blog.html">Blogs</a></li>
-                <li><a href="FAQ.html">FAQs</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-2 col-md-3 col-6 mt-5 mt-lg-0">
-            <div class="block-content">
-              <!-- heading -->
-              <h6>Resources</h6>
-              <!-- links -->
-              <ul>
-                <li><a href="sign-up.html">Singup</a></li>
-                <li><a href="sign-in.html">Login</a></li>
-                <li><a href="blog.html">Blog</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-2 col-md-3 col-6 mt-5 mt-lg-0">
-            <div class="block-content">
-              <!-- heading -->
-              <h6>Company</h6>
-              <!-- links -->
-              <ul>
-                <li><a href="career.html">Career</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="team.html">Investor</a></li>
-                <li><a href="privacy.html">Terms</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-2 col-md-3 col-6 mt-5 mt-lg-0">
-            <div class="block-content">
-              <!-- heading -->
-              <h6>Company</h6>
-              <!-- links -->
-              <ul>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="team.html">Team</a></li>
-                <li><a href="privacy-policy.html">Privacy Policy</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
+      <div class="content">
+        <ul class="info">
+          <li><h3>Liên hệ với chúng tôi</h3></li>
+          <li>(+84)329976180</li>
+          <li>idev@gmail.com</li>
+        </ul>
+        <ul class="address">
+          <li><h3>Địa chỉ</h3></li>
+          <li>TpHcm: 440/20 Huỳnh Tấn Phát, Quận 7</li>
+        </ul>
+        <ul class="services">
+          <li><h3>Dịch vụ</h3></li>
+          <li>Thiết kế website</li>
+          <li>Thiết kế ứng dụng di động</li>
+        </ul>
       </div>
+    </div>
+    <div class="footer-sub">
+      <p class="slogan">© 2023 Copyright iDev team</p>
     </div>
   </footer>
 </template>
@@ -63,36 +28,38 @@
 </script>
 
 <style lang="scss" scoped>
-.footer-main {
-  padding: 92px 0;
-  background-color: var(--black1);
-  &-container {
-    .row {
-      justify-content: space-around;
-    }
-  }
-  .block-content {
-    h6 {
-      font-weight: bold;
-      font-size: 14px;
-      text-transform: uppercase;
-      color: var(--light);
-      margin-bottom: 25px;
-    }
-    ul {
-      padding: 0;
-      li {
-        margin-bottom: 10px;
-        list-style: none;
-        a {
-          font-size: 14px;
-          color: var(--gray-1);
-          transition: 0.2s ease;
-          &:hover {
-            color: var(--light);
+.footer {
+  .footer-main {
+    padding: 77px 0;
+    background-color: var(--black1);
+    .content {
+      display: flex;
+      flex-wrap: wrap;
+      color: white;
+      gap: 100px;
+      justify-content: center;
+      ul {
+        padding: 0;
+        li {
+          list-style: none;
+          margin-bottom: 10px;
+          h3 {
+            color: white;
           }
         }
       }
+    }
+  }
+  .footer-sub {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    gap: 11px;
+    background-color: #343a40;
+    color: white;
+    .icon {
+      width: 40px;
     }
   }
 }

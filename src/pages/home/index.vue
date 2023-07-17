@@ -21,7 +21,7 @@ const { data: homeData } = await useAsyncData(() =>
 <template>
 <NuxtLayout name="default">
   <div class="homePage">
-    <GradientBannerComponent></GradientBannerComponent>
+    <GradientBannerComponent :image="true"></GradientBannerComponent>
     <section class="featureCard section pt-0 position-relative pull-top">
       <div class="container">
         <div class="rounded shadow p-5 bg-white featureCard_content">
