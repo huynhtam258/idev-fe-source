@@ -11,18 +11,18 @@
       <div class="group">
         <div class="control">
           <div class="control_field">
-            <textfield-component type="text" placeholder="iDev Huỳnh" />
+            <textfield-component type="text" placeholder="iDev Huỳnh" label="HỌ VÀ TÊN" />
           </div>
           <div class="control_field">
-            <textfield-component type="text" placeholder="iDev@email.com" />
+            <textfield-component type="text" placeholder="iDev@email.com" label="ĐỊA CHỈ EMAIL" />
           </div>
         </div>
         <div class="control">
           <div class="control_field">
-            <textfield-component type="text" placeholder="Web Design" />
+            <textfield-component type="text" placeholder="Web Design" label="CHỦ ĐỀ" />
           </div>
           <div class="control_field">
-            <textfield-component type="text" placeholder="Number Phone" />
+            <textfield-component type="text" placeholder="Number Phone" label="SỐ ĐIỆN THOẠI" />
           </div>
         </div>
       </div>

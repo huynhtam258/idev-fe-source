@@ -25,6 +25,12 @@
           {{ feature }}
         </li>
       </ul>
+      <div class="register">
+        <button :class="{
+          'btn-advance': service.type === 'advance',
+          'btn-premium': service.type === 'premium'
+        }">Đăng kí</button>
+      </div>
     </div>
   </div>
 </template>
@@ -104,6 +110,26 @@ const services = reactive([
         margin: 14px 0;
         font-size: 14px;
         font-weight: 600;
+      }
+    }
+    .register {
+      width: 100%;
+      margin: 44px 0;
+      text-align: center;
+      button {
+        width: 90%;
+        height: 44px;
+        border: unset;
+        color: white;
+        font-weight: 600;
+        font-size: 16px;
+        cursor: pointer;
+        &.btn-advance {
+          background-color: #00c9a7;
+        }
+        &.btn-premium {
+          background-color: #de4437;
+        }
       }
     }
   }

@@ -1,13 +1,10 @@
 <template>
   <div class="textfieldComponent">
-    <input
-      :value="internalValue"
-      :type="type"
-      :placeholder="placeholder"
-      :required="required"
-      class="form-control"
-      @input="updateModelValue($event.target.value)"
-    />
+    <label>{{ label }}</label>
+    <div class="textfield-custom">
+      <input :value="internalValue" :type="type" :placeholder="placeholder" :required="required" class="form-control"
+        @input="updateModelValue($event.target.value)" />
+    </div>
   </div>
 </template>
 <script lang="ts" setup>
@@ -23,6 +20,10 @@ const props = defineProps({
   type: {
     type: String,
     default: "text",
+  },
+  label: {
+    type: String,
+    default: ''
   },
   required: {
     type: Boolean,
@@ -45,32 +46,44 @@ watch(internalValue, (): void => {
 
 <style lang="scss" scoped>
 .textfieldComponent {
-  border: 1px solid var(--white-1);
-  border-radius: 0.25rem;
-  padding: 0.375rem 0.75rem;
-  .form-control {
-    display: block;
-    border: unset;
-    width: 100%;
-    height: 44px;
-    font-size: 1rem;
-    font-weight: var(--font-weight-regular);
-    line-height: 1.5;
-    color: var(--gray-2);
-    background-color: var(--white);
-    background-clip: padding-box;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    &:focus-visible {
-      outline: unset;
+  text-align: left;
+  label {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 2.7;
+  }
+  .textfield-custom {
+    border: 1px solid var(--white-1);
+    border-radius: 0.25rem;
+    padding: 0.375rem 0.75rem;
+
+    .form-control {
+      display: block;
+      border: unset;
+      width: 100%;
+      height: 44px;
+      font-size: 1rem;
+      font-weight: var(--font-weight-regular);
+      line-height: 1.5;
+      color: var(--gray-2);
+      background-color: var(--white);
+      background-clip: padding-box;
+      transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+      &:focus-visible {
+        outline: unset;
+      }
+    }
+
+    input:focus {
+      background-color: unset;
+    }
+
+    &:focus {
+      border: 1px solid var(--primary-color);
+      box-shadow: unset !important;
     }
   }
 
-  input:focus {
-    background-color: unset;
-  }
-  &:focus {
-    border: 1px solid var(--primary-color);
-    box-shadow: unset !important;
-  }
 }
 </style>
