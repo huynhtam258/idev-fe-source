@@ -2,16 +2,13 @@
 export default defineNuxtConfig({
   srcDir: 'src',
   devtools: { enabled: false },
-  ssr: true,
+  ssr: false,
   components: [
     {
       path: '~/components',
       pathPrefix: false
     },
   ],
-  nitro: {
-    serveStatic: false,
-  },
   css: [
     'assets/scss/style.scss'
   ],
@@ -24,12 +21,8 @@ export default defineNuxtConfig({
     '/home': { ssr: true },
   },
   vite: {
-    build: {
-      rollupOptions: {
-        output: {
-          chunkFileNames: '_nuxt/[hash].mjs'
-        }
-      }
+    define: {
+      'process.env.DEBUG': false
     }
   },
   app: {
