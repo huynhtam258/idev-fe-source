@@ -1,4 +1,7 @@
 <template>
+  <GradientBannerComponent 
+    title="Liên hệ với chúng tôi"
+   />
   <div class="connect">
     <div class="connect_head">
       <h2>Liên hệ hợp tác với iDev</h2>
