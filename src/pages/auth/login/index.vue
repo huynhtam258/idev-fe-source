@@ -7,10 +7,14 @@ import LoginService from "./../../../core/module/login/login.service";
 const email = ref<string>("");
 const password = ref<string>("");
 const loginService = new LoginService();
+const router = useRouter()
 
 async function onLogin(): Promise<void> {
   const userLogin = { email: email.value, password: password.value };
   await loginService.login(userLogin);
+  router.push({
+    path: '/admin/dashboard'
+  })
 }
 </script>
 <template>
@@ -24,12 +28,14 @@ async function onLogin(): Promise<void> {
           v-model="email"
           class="textfield"
           type="text"
+          label="Email"
           placeholder="email"
         />
         <textfield-component
           v-model="password"
           class="textfield"
           type="password"
+          label="Mật khẩu"
           placeholder="mật khẩu"
         />
       </form>
