@@ -6,16 +6,16 @@
     <div class="price_col" v-for="(service, index) in services" :key="`service-${index}`">
       <div class="head_tab">
         <h3 class="price_title" :class="{
-          advance: service.type === 'advance',
+          advance: service.price_type === 'advance',
           premium: service.type === 'premium',
         }">
-          {{ service.titleService }}
+          {{ service.price_name }}
         </h3>
-        <div class="total_price">{{ service.totalPrice }} VNĐ</div>
+        <div class="total_price">{{ service.fixed_price }} VNĐ</div>
       </div>
       <ul class="services">
-        <li v-for="(feature, index) in service.features" :key="`feature-${index}`">
-          {{ feature }}
+        <li v-for="(item, index) in service.feature" :key="`feature-${index}`">
+          {{ item }}
         </li>
       </ul>
       <div class="register">
@@ -28,44 +28,11 @@
   </div>
 </template>
 <script setup lang="ts">
-const services = reactive([
-  {
-    titleService: "Gói chuyên nghiệp",
-    totalPrice: "20,000,000",
-    type: "advance",
-    features: [
-      "Trang chủ",
-      "Giới thiệu",
-      "Danh mục sản phẩm",
-      "Tin tức",
-      "Liên hệ",
-      "Giỏ hàng",
-      "Phân mục loại sản phẩm",
-      "Thông báo qua telegram hoặc email",
-      "Miễn phí hosting trong 1 năm đầu tiên 5GB",
-      "Hỗ trợ 1 ngôn ngữ",
-      "Thiết kế website chạy marketing đa nền tảng hiệu quả",
-    ],
-  },
-  {
-    titleService: "Gói cao cấp",
-    totalPrice: "50,000,000",
-    type: "premium",
-    features: [
-      "Trang chủ",
-      "Giới thiệu",
-      "Danh mục sản phẩm",
-      "Tin tức",
-      "Liên hệ",
-      "Giỏ hàng",
-      "Phân mục loại sản phẩm",
-      "Thông báo qua telegram hoặc email",
-      "Miễn phí hosting trong 1 năm đầu tiên 5GB",
-      "Hỗ trợ 1 ngôn ngữ",
-      "Thiết kế website chạy marketing đa nền tảng hiệu quả",
-    ],
-  },
-]);
+import useWpApi from './../../composables/useApi'
+let services = reactive<any>([]);
+const data = await useWpApi().fetchData<unknown>('/api/price')
+services = data
+
 </script>
 <style scoped lang="scss">
 .price {
