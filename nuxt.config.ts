@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   srcDir: 'src',
   devtools: { enabled: false },
-  ssr: false,
+  ssr: true,
   components: [
     {
       path: '~/components',

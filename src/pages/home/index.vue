@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import HomeService from "./../../core/module/home/home.service"
+
 useHead({
   title: "Home",
   meta: [
@@ -12,11 +14,12 @@ useHead({
 definePageMeta({
   layout: false
 })
-const appConfig = useRuntimeConfig()
 
-const { data: homeData } = await useAsyncData(() =>
-  $fetch(`${appConfig.public.url}/api/home`)
-);
+const homeService = new HomeService()
+const data = await homeService.getHome()
+const homeData = ref()
+homeData.value = { data: data }
+
 </script>
 <template>
 <NuxtLayout name="default">

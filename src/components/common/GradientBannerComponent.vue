@@ -138,7 +138,6 @@ const props = defineProps({
 </script>
 <style scoped lang='scss'>
 @import 'src/core/module/home/_gradientBanner.responsive.scss';
-// @import 'src/assets/aos/aos.css';
 .row {
   justify-content: space-between;
   align-items: center;
