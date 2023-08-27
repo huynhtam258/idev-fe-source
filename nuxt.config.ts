@@ -2,7 +2,6 @@
 export default defineNuxtConfig({
   srcDir: 'src',
   devtools: { enabled: false },
-  ssr: true,
   components: [
     {
       path: '~/components',
@@ -19,6 +18,8 @@ export default defineNuxtConfig({
   },
   routeRules: {
     '/home': { ssr: true },
+    '/connect': { ssr: false },
+    '/prices': { ssr: false }
   },
   vite: {
     define: {
