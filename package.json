@@ -24,6 +24,15 @@
   "dependencies": {
     "@nuxt/types": "^2.17.0",
     "@nuxtjs/axios": "^5.13.6",
+    "@tiptap/extension-character-count": "^2.1.7",
+    "@tiptap/extension-image": "^2.1.7",
+    "@tiptap/extension-subscript": "^2.1.7",
+    "@tiptap/extension-superscript": "^2.1.7",
+    "@tiptap/extension-text-align": "^2.1.7",
+    "@tiptap/extension-underline": "^2.1.7",
+    "@tiptap/pm": "^2.1.7",
+    "@tiptap/starter-kit": "^2.1.7",
+    "@tiptap/vue-3": "^2.1.7",
     "axios": "^1.4.0",
     "vee-validate": "^4.10.7",
     "yup": "^1.2.0"
