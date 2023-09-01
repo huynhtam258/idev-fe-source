@@ -13,7 +13,8 @@ export default defineNuxtConfig({
   ],
   runtimeConfig: {
     public: {
-      url: `${process.env.NUXT_PUBLIC_API_BASE}` || ''
+      url: `${process.env.NUXT_PUBLIC_API_BASE}` || '',
+      blogUrl: `${process.env.NUXT_PUBLIC_API_BLOG}` || ''
     }
   },
   routeRules: {
