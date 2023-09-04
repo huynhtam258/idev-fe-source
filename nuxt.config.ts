@@ -18,14 +18,21 @@ export default defineNuxtConfig({
     }
   },
   routeRules: {
-    '/home': { ssr: true },
+    '/home': { ssr: false },
     '/connect': { ssr: false },
     '/prices': { ssr: false }
   },
   vite: {
     define: {
       'process.env.DEBUG': false
-    }
+    },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: '@import "@/assets/scss/_variables.scss"; @import "@/assets/scss/_commons.scss";',
+        },
+      },
+    },
   },
   app: {
     head: {
